@@ -24,7 +24,9 @@ const currentBlockData = [
 
 const nonce = 100;
 
-console.log(wagnerCoin.hashBlock(previousBlockHash, currentBlockData, nonce));
+console.log(wagnerCoin.prooOfWork(previousBlockHash, currentBlockData));
+
+//console.log(wagnerCoin.hashBlock(previousBlockHash, currentBlockData, nonce));
 
 //wagnerCoin.createNewBlock(0, 'hash01', 'hash02');
 //wagnerCoin.createNewTransaction(100, 'wagnerUHA786786HJ', 'MARIIHIU6786');
