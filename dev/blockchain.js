@@ -35,7 +35,7 @@ Blockchain.prototype.createNewTransaction = function (amount, sender, recipient)
 
     this.pendingTransactions.push(newTransaction);
 
-    return this.getLastBlock()['index'] + 1;
+    return this.getLastBlock().index + 1;
 }
 
 Blockchain.prototype.hashBlock = function (previousBlockHash, currentBlockData, nonce){
@@ -50,7 +50,6 @@ Blockchain.prototype.prooOfWork = function (previousBlockHash, currentBlockData)
     while(hash.substring(0,4) !== '0000'){
         nonce++;
         hash = this.hashBlock(previousBlockHash, currentBlockData, nonce);
-        console.log(hash);
     }
 
     return nonce;
