@@ -3,6 +3,7 @@ const app = express();
 const bodyparser = require('body-parser');
 const Blockchain = require('./blockchain.js');
 const uuid = require('uuid/v1');
+const port = process.argv[2];
 
 const nodeAddress = uuid().split('-').join('');
 const wagCoin = new Blockchain();
@@ -35,7 +36,19 @@ app.get('/mine', function (req, res) {
     const newBlock = wagCoin.createNewBlock(nonce, previousBlockHash, blockHash);
     res.json({note:'New block mined successfully', block: newBlock});
 });
- 
-app.listen(3000, function(){
-    console.log('Listening on port 3000...');
+
+app.post('register-and-broadcast-node', function (req, res) {
+   const newNodeUrl = req.body.newNodeUrl; 
+});
+
+app.post('register-node', function (req, res) {
+    const newNodeUrl = req.body.newNodeUrl; 
+ });
+
+ app.post('register-nodes-bulk', function (req, res) {
+    const newNodeUrl = req.body.newNodeUrl; 
+ });
+
+app.listen(port, function(){
+    console.log(`Listening on port ${port}...`);
 });
