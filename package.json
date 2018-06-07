@@ -25,6 +25,8 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "nodemon": "^1.17.5",
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2",
     "sha256": "^0.2.0",
     "uuid": "^3.2.1"
   }
